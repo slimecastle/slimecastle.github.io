@@ -1,5 +1,4 @@
-// src/components/CreditCardFormStyles.ts
-import styled, { keyframes, createGlobalStyle  } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 
 export const Container = styled.div`
     max-width: 1000px;
@@ -9,6 +8,10 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
 `;
 
 export const Form = styled.form`
@@ -57,8 +60,12 @@ export const CardContainer = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    display: flex;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const StyledCardContainer = styled(CardContainer)`
@@ -68,11 +75,21 @@ export const StyledCardContainer = styled(CardContainer)`
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 768px) {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 `;
 
 export const CardImage = styled.img`
     width: 300px;
     height: 200px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const CardInfo = styled.div`
@@ -138,6 +155,10 @@ export const StyledHeader = styled.h1`
     position: relative;
     z-index: 1;
     font-family: 'Roboto', sans-serif;
+
+    @media (max-width: 768px) {
+        font-size: 28px; // Reduce font size for smaller screens
+    }
 `;
 
 const fadeIn = keyframes`
@@ -165,4 +186,3 @@ export const TopMessage = styled.div`
     max-width: 600px; /* Set maximum width */
     margin: 0 auto;
 `;
-  
