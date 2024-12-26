@@ -105,6 +105,9 @@ export const CardTitle = styled.h2`
     color: #007bff;
     height: 50px;
     text-align: center;
+    @media (max-width: 768px) {
+        height: 80px;
+    }
 `;
 
 export const CardText = styled.p`
@@ -139,7 +142,8 @@ export const CardLink = styled.a`
 export const BackButton = styled(Button)`
     position: relative;
     margin-top: 50px;
-    left: 47.5%;
+    left: 50%; 
+    transform: translateX(-50%);
 `;
 
 export const GlobalStyle = createGlobalStyle`
