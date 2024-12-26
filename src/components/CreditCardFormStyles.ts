@@ -106,7 +106,8 @@ export const CardTitle = styled.h2`
     height: 50px;
     text-align: center;
     @media (max-width: 768px) {
-        height: 80px;
+        min-height: 50px;
+        height: auto;
     }
 `;
 
