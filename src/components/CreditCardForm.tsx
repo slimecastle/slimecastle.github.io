@@ -280,8 +280,9 @@ const CreditCardForm: React.FC = () => {
                                 <CardImage src={card.image} alt={`${card.name} image`} />
                                 <CardInfo>
                                     <CardTitle>{card.name}</CardTitle>
-                                    <CardText>In 1 year, you will get approximately <Highlight>{formatToDollar(rewards1Year)}</Highlight> after considering the sign-up bonus and yearly fee.</CardText>
-                                    <CardText>In 3 years, you will get approximately <Highlight>{formatToDollar(rewards3Years)}</Highlight> after considering the sign-up bonus and yearly fees.</CardText>
+                                    <CardText>In 1 year, you will get approximately <Highlight>{formatToDollar(rewards1Year)}</Highlight> 
+                                    cash back after considering the sign-up bonus and yearly fee.</CardText>
+                                    <CardText>In 3 years, you will get approximately <Highlight>{formatToDollar(rewards3Years)}</Highlight> cash back after considering the sign-up bonus and yearly fees.</CardText>
                                     <CardLink href={card.link} target="_blank" rel="noopener noreferrer">Get this card</CardLink>
                                 </CardInfo>
                             </StyledCardContainer>
