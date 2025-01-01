@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SpendingHabits, CreditCard } from '../../types';
 import TextField from '@mui/material/TextField';
 import { NumericFormat } from 'react-number-format';
@@ -174,6 +174,7 @@ const CreditCardForm: React.FC = () => {
     const [showSpendingHabits, setShowSpendingHabits] = useState(true);
     const [fadeIn, setFadeIn] = useState(false);
     const [showMethodology, setShowMethodology] = useState(false);
+    const methodologyRef = useRef<HTMLDivElement>(null);
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -203,6 +204,23 @@ const CreditCardForm: React.FC = () => {
     const toggleMethodology = () => {
         setShowMethodology(!showMethodology);
     };
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (methodologyRef.current && !methodologyRef.current.contains(event.target as Node)) {
+            setShowMethodology(false);
+        }
+    };
+
+    useEffect(() => {
+        if (showMethodology) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showMethodology]);
 
     useEffect(() => {
         if (!showSpendingHabits) {
@@ -304,7 +322,7 @@ const CreditCardForm: React.FC = () => {
                 Methodology
             </MethodologyButton>
             {showMethodology && (
-                <MethodologyContainer>
+                <MethodologyContainer ref={methodologyRef}>
                     <MethodologyTextBox>
                         <p>This calculator evaluates your monthly credit card spending habits and recommends the card that will maximize your cash back rewards. It does this by applying the cash back percentages offered by leading credit cards to your monthly spending in different categories (such as groceries, dining, and travel.)<br></br><br></br>
 
