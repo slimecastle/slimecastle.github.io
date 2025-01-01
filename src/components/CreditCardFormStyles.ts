@@ -191,3 +191,33 @@ export const TopMessage = styled.div`
     max-width: 600px; /* Set maximum width */
     margin: 0 auto;
 `;
+
+export const MethodologyButton = styled.button`
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+`;
+
+export const MethodologyContainer = styled.div`
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 300px;
+    z-index: 10;
+`;
+
+export const MethodologyTextBox = styled.div`
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+`;

@@ -19,7 +19,10 @@ import {
     CardLink,
     StyledCardContainer,
     FadeInContainer,
-    TopMessage
+    TopMessage,
+    MethodologyButton,
+    MethodologyContainer,
+    MethodologyTextBox
 } from './CreditCardFormStyles';
 import { InputAdornment } from '@mui/material';
 
@@ -170,7 +173,8 @@ const CreditCardForm: React.FC = () => {
     const [recommendations, setRecommendations] = useState<{ card: CreditCard, rewards1Year: number, rewards3Years: number }[]>([]);
     const [showSpendingHabits, setShowSpendingHabits] = useState(true);
     const [fadeIn, setFadeIn] = useState(false);
-    
+    const [showMethodology, setShowMethodology] = useState(false);
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         const cardRewards = creditCards.map(card => ({
@@ -194,6 +198,10 @@ const CreditCardForm: React.FC = () => {
             ...spendingHabits,
             [name]: Number(value.replace(/[^0-9.-]+/g,""))
         });
+    };
+
+    const toggleMethodology = () => {
+        setShowMethodology(!showMethodology);
     };
 
     useEffect(() => {
@@ -289,6 +297,20 @@ const CreditCardForm: React.FC = () => {
                     </CardContainer>
                     <BackButton onClick={handleBack}>Back</BackButton>
                 </FadeInContainer>
+            )}
+
+            {/* Methodology Section */}
+            <MethodologyButton onClick={toggleMethodology}>
+                Methodology
+            </MethodologyButton>
+            {showMethodology && (
+                <MethodologyContainer>
+                    <MethodologyTextBox>
+                        <p>This calculator evaluates your monthly credit card spending habits and recommends the card that will maximize your cash back rewards. It does this by applying the cash back percentages offered by leading credit cards to your monthly spending in different categories (such as groceries, dining, and travel.)<br></br><br></br>
+
+                        For example, if you spend heavily on groceries, a card offering 6% cash back in that category will provide the highest rewards. The calculator accounts for sign-up bonus offers and yearly fees to give you a comprehensive estimate of the total cash back you can earn over 1 or 3 years.</p>
+                    </MethodologyTextBox>
+                </MethodologyContainer>
             )}
         </Container>
     );
