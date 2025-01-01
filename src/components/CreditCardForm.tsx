@@ -207,7 +207,7 @@ const CreditCardForm: React.FC = () => {
             {showSpendingHabits ? (
                 <Form id="spending-form" onSubmit={e => handleSubmit(e)}>
                     <TopMessage>
-                        Please enter your monthly spending habits below:
+                        Please enter your monthly credit card spending habits below:
                     </TopMessage>
                     <Label>
                         Groceries:
