@@ -7,6 +7,14 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-E65L3RM0Z6",
+        head: true,
+        anonymize: true,
+      },
+    },
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-manifest`,
@@ -18,14 +26,6 @@ const config: GatsbyConfig = {
         theme_color: `#000000`,
         display: `standalone`,
         icon: `static/6963703.png`
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "G-E65L3RM0Z6",
-        head: false,
-        anonymize: true,
       },
     },
     'gatsby-plugin-cname',
