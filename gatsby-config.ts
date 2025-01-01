@@ -3,14 +3,24 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Credit Card Recommender`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.card-iq.com`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-styled-components",
-  ]
+  plugins: [
+    "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Credit Card Recommender`,
+        short_name: `CardIQ`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        display: `standalone`,
+        icon: `static/7589130.png`
+      },
+    },
+  ],
 };
 
 export default config;
