@@ -20,7 +20,16 @@ const config: GatsbyConfig = {
         icon: `static/6963703.png`
       },
     },
-    'gatsby-plugin-cname'
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-E65L3RM0Z6",
+        head: false,
+        anonymize: true,
+      },
+    },
+    'gatsby-plugin-cname',
+    "gatsby-plugin-react-helmet",
   ],
 };
 

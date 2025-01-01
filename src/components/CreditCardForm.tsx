@@ -149,7 +149,7 @@ function calculateRewards(habits: SpendingHabits, percentages: { [key: string]: 
         (Number(dining) * percentages.dining) + 
         (Number(travel) * percentages.travel) + 
         (Number(groceries) * percentages.groceries) +
-        ((Number(spend) - Number(dining) - Number(travel) - Number(groceries)) * percentages.spend)
+        (Math.max(0, (Number(spend) - Number(dining) - Number(travel) - Number(groceries)) * percentages.spend))
     );
 }
 
