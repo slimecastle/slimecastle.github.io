@@ -17,9 +17,10 @@ const config: GatsbyConfig = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `standalone`,
-        icon: `static/7589130.png`
+        icon: `static/6963703.png`
       },
     },
+    'gatsby-plugin-cname'
   ],
 };
 
