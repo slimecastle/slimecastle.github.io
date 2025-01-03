@@ -8,11 +8,14 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "G-E65L3RM0Z6",
-        head: true,
-        anonymize: true,
+        trackingIds: [
+          "G-E65L3RM0Z6",
+        ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     "gatsby-plugin-styled-components",
