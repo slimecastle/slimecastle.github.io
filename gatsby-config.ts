@@ -12,11 +12,20 @@ const config: GatsbyConfig = {
       options: {
         trackingIds: [
           "G-E65L3RM0Z6",
-          "GTM-P9T3H3T5",
         ],
         pluginConfig: {
           head: true,
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-P9T3H3T5",
+        includeInDevelopment: true,
+        defaultDataLayer: { platform: "gatsby" },
+        // Defaults to false
+        enableWebVitalsTracking: true,
       },
     },
     "gatsby-plugin-styled-components",
