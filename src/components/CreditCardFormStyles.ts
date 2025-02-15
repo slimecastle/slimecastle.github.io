@@ -14,6 +14,36 @@ export const Container = styled.div`
     }
 `;
 
+export const CardBottomRight = styled.div`
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: #555;
+`;
+
+export const InfoButton = styled.button`
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    &:hover {
+        color: #0056b3;
+    }
+`;
+
+export const InfoBox = styled.div`
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;

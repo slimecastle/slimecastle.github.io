@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Fragment } from 'react';
 import { SpendingHabits, CreditCard } from '../../types';
 import TextField from '@mui/material/TextField';
 import { NumericFormat } from 'react-number-format';
@@ -174,7 +174,16 @@ const CreditCardForm: React.FC = () => {
     const [showSpendingHabits, setShowSpendingHabits] = useState(true);
     const [fadeIn, setFadeIn] = useState(false);
     const [showMethodology, setShowMethodology] = useState(false);
+    const [showInfo, setShowInfo] = useState<boolean[]>(Array(creditCards.length).fill(false));
     const methodologyRef = useRef<HTMLDivElement>(null);
+
+    const toggleInfo = (index: number) => {
+        setShowInfo(prev => {
+            const newInfo = [...prev];
+            newInfo[index] = !newInfo[index];
+            return newInfo;
+        });
+    };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -309,10 +318,17 @@ const CreditCardForm: React.FC = () => {
                                     <CardText>In 1 year, you will get approximately <Highlight>{formatToDollar(rewards1Year)}</Highlight> cash back after considering the sign-up bonus and yearly fee.</CardText>
                                     <CardText>In 3 years, you will get approximately <Highlight>{formatToDollar(rewards3Years)}</Highlight> cash back after considering the sign-up bonus and yearly fees.</CardText>
                                     <CardLink href={card.link} target="_blank" rel="noopener noreferrer">Get this card</CardLink>
-                                    <div className="card-bottom-right">
-                                        <p>Sign Up Bonus: {formatToDollar(card.signUpBonus)}</p>
-                                        <p>Yearly Fee: {formatToDollar(card.yearlyFee)}</p>
-                                    </div>
+                                    <CardBottomRight>
+                                        <InfoButton onClick={() => toggleInfo(index)}>
+                                            More Info
+                                        </InfoButton>
+                                        {showInfo[index] && (
+                                            <InfoBox>
+                                                <p>Sign Up Bonus: {formatToDollar(card.signUpBonus)}</p>
+                                                <p>Yearly Fee: {formatToDollar(card.yearlyFee)}</p>
+                                            </InfoBox>
+                                        )}
+                                    </CardBottomRight>
                                 </CardInfo>
                             </StyledCardContainer>
                         ))}
