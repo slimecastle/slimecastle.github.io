@@ -16,14 +16,17 @@ export const Container = styled.div`
 
 
 export const InfoButton = styled.button`
-    background-color: transparent;
+    background-color: #007bff;
     border: none;
-    color: #007bff;
+    color: white;
     cursor: pointer;
     font-size: 14px;
-    text-decoration: underline;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
     &:hover {
-        color: #0056b3;
+        background-color: #0056b3;
     }
 `;
 
@@ -92,7 +95,8 @@ export const CardContainer = styled.div`
 
 export const StyledCardContainer = styled(CardContainer)`
     padding-top: 30px;
-    flex: 1 1 calc(33.333% - 20px); /* Ensures cards take equal space and leaves some gap */
+    flex: 1 1 calc(33.333% - 20px);
+    min-height: 450px; /* Increase the height to ensure everything fits */
     max-width: calc(33.333% - 20px);
     border: 1px solid #ddd;
     border-radius: 5px;
