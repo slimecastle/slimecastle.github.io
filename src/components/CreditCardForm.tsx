@@ -22,7 +22,8 @@ import {
     TopMessage,
     MethodologyButton,
     MethodologyContainer,
-    MethodologyTextBox
+    MethodologyTextBox,
+    CardBottomRight
 } from './CreditCardFormStyles';
 import { InputAdornment } from '@mui/material';
 
