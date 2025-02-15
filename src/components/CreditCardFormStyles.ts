@@ -21,12 +21,13 @@ export const InfoButton = styled.button`
     color: white;
     cursor: pointer;
     font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     &:hover {
         background-color: #0056b3;
+        transform: scale(1.05);
     }
 `;
 
@@ -96,7 +97,7 @@ export const CardContainer = styled.div`
 export const StyledCardContainer = styled(CardContainer)`
     padding-top: 30px;
     flex: 1 1 calc(33.333% - 20px);
-    min-height: 450px; /* Increase the height to ensure everything fits */
+    min-height: 500px; /* Further increase the height to ensure everything fits */
     max-width: calc(33.333% - 20px);
     border: 1px solid #ddd;
     border-radius: 5px;
