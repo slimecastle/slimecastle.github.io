@@ -97,6 +97,16 @@ export const CardInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
+`;
+
+export const CardBottomRight = styled.div`
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: #555;
 `;
 
 export const CardTitle = styled.h2`
