@@ -14,14 +14,6 @@ export const Container = styled.div`
     }
 `;
 
-export const CardBottomRight = styled.div`
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    text-align: right;
-    font-size: 14px;
-    color: #555;
-`;
 
 export const InfoButton = styled.button`
     background-color: transparent;
