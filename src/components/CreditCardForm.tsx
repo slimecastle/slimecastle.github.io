@@ -326,6 +326,7 @@ const CreditCardForm: React.FC = () => {
                                             <InfoBox>
                                                 <p>Sign Up Bonus: {formatToDollar(card.signUpBonus)}</p>
                                                 <p>Yearly Fee: {formatToDollar(card.yearlyFee)}</p>
+                                                <p>Recommended Credit Score: 690-850</p>
                                             </InfoBox>
                                         )}
                                         <InfoButton onClick={() => toggleInfo(index)}>
