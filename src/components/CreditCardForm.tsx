@@ -24,7 +24,8 @@ import {
     MethodologyContainer,
     MethodologyTextBox,
     CardBottomRight,
-    InfoButton
+    InfoButton,
+    InfoBox
 } from './CreditCardFormStyles';
 import { InputAdornment } from '@mui/material';
 
