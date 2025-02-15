@@ -36,6 +36,7 @@ export const InfoBox = styled.div`
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
+    margin-bottom: 20px; /* Add margin to prevent overlap */
     margin-top: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
