@@ -200,6 +200,7 @@ const CreditCardForm: React.FC = () => {
             document.removeEventListener('mousedown', handleClickOutsideInfoBox);
         };
     }, []);
+    const toggleInfo = (index: number) => {
         setShowInfo(prev => {
             const newInfo = [...prev];
             newInfo[index] = !newInfo[index];
