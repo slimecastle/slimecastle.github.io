@@ -180,7 +180,26 @@ const CreditCardForm: React.FC = () => {
     const [showInfo, setShowInfo] = useState<boolean[]>(Array(creditCards.length).fill(false));
     const methodologyRef = useRef<HTMLDivElement>(null);
 
-    const toggleInfo = (index: number) => {
+    const infoBoxRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const handleClickOutsideInfoBox = (event: MouseEvent) => {
+        infoBoxRefs.current.forEach((ref, index) => {
+            if (ref && !ref.contains(event.target as Node)) {
+                setShowInfo(prev => {
+                    const newInfo = [...prev];
+                    newInfo[index] = false;
+                    return newInfo;
+                });
+            }
+        });
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutsideInfoBox);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutsideInfoBox);
+        };
+    }, []);
         setShowInfo(prev => {
             const newInfo = [...prev];
             newInfo[index] = !newInfo[index];
@@ -323,7 +342,7 @@ const CreditCardForm: React.FC = () => {
                                     <CardLink href={card.link} target="_blank" rel="noopener noreferrer">Get this card</CardLink>
                                     <CardBottomRight>
                                         {showInfo[index] && (
-                                            <InfoBox>
+                                            <InfoBox ref={el => infoBoxRefs.current[index] = el}>
                                                 <p>Sign Up Bonus: {formatToDollar(card.signUpBonus)}</p>
                                                 <p>Yearly Fee: {formatToDollar(card.yearlyFee)}</p>
                                                 <p>Recommended Credit Score: 690-850</p>
