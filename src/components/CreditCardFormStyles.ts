@@ -164,6 +164,7 @@ export const CardLink = styled.a`
     display: inline-block; 
     padding: 10px 20px; 
     margin-top: 10px; 
+    margin-bottom: 40px;
     color: #fff; 
     background-color: #007bff; 
     border: none; 
