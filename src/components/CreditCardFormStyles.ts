@@ -173,8 +173,11 @@ export const CardLink = styled.a`
     text-align: center; 
     cursor: pointer; transition: background-color 0.3s;
 
+    transition: background-color 0.3s, transform 0.2s;
     &:hover {
-        text-decoration: underline;
+        background-color: #0056b3;
+        transform: scale(1.05);
+        text-decoration: none;
     }
 `;
 
