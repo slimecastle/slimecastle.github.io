@@ -229,7 +229,7 @@ const CreditCardForm: React.FC = () => {
         const { name, value } = event.target;
         setSpendingHabits({
             ...spendingHabits,
-            [name]: Number(value.replace(/[^0-9.-]+/g,""))
+            [name]: value.replace(/[^0-9.-]+/g,"")
         });
     };
 
@@ -287,6 +287,7 @@ const CreditCardForm: React.FC = () => {
                         Dining:
                         <NumericFormat
                             value={spendingHabits.dining}
+                            name="dining"
                             customInput={TextField}
                             InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -302,6 +303,7 @@ const CreditCardForm: React.FC = () => {
                         Travel:
                         <NumericFormat
                             value={spendingHabits.travel}
+                            name="travel"
                             customInput={TextField}
                             InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -317,6 +319,7 @@ const CreditCardForm: React.FC = () => {
                         Total monthly spend (including above categories):
                         <NumericFormat
                             value={spendingHabits.spend}
+                            name="spend"
                             customInput={TextField}
                             InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -347,6 +350,11 @@ const CreditCardForm: React.FC = () => {
                                                 <p>Sign Up Bonus: {formatToDollar(card.signUpBonus)}</p>
                                                 <p>Yearly Fee: {formatToDollar(card.yearlyFee)}</p>
                                                 <p>Recommended Credit Score: 690-850</p>
+                                                <p><strong>Annual Rewards Sources:</strong></p>
+                                                {card.percentages.groceries > 0 && <p>• Groceries: {(card.percentages.groceries * 100).toFixed(1)}% = {formatToDollar(12 * Number(spendingHabits.groceries) * card.percentages.groceries)}</p>}
+                                                {card.percentages.dining > 0 && <p>• Dining: {(card.percentages.dining * 100).toFixed(1)}% = {formatToDollar(12 * Number(spendingHabits.dining) * card.percentages.dining)}</p>}
+                                                {card.percentages.travel > 0 && <p>• Travel: {(card.percentages.travel * 100).toFixed(1)}% = {formatToDollar(12 * Number(spendingHabits.travel) * card.percentages.travel)}</p>}
+                                                {card.percentages.spend > 0 && <p>• All other purchases: {(card.percentages.spend * 100).toFixed(1)}% = {formatToDollar(12 * Math.max(0, Number(spendingHabits.spend) - Number(spendingHabits.groceries) - Number(spendingHabits.dining) - Number(spendingHabits.travel)) * card.percentages.spend)}</p>}
                                             </InfoBox>
                                         )}
                                         <InfoButton onClick={() => toggleInfo(index)}>
