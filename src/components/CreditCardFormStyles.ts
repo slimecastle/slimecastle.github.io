@@ -262,3 +262,22 @@ export const MethodologyTextBox = styled.div`
     line-height: 1.5;
     color: #333;
 `;
+
+export const Footer = styled.footer`
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+    font-size: 14px;
+`;
+
+export const FooterLink = styled.a`
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 15px;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+`;

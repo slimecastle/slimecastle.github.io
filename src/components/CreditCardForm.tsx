@@ -25,7 +25,9 @@ import {
     MethodologyTextBox,
     CardBottomRight,
     InfoButton,
-    InfoBox
+    InfoBox,
+    Footer,
+    FooterLink
 } from './CreditCardFormStyles';
 import { InputAdornment } from '@mui/material';
 
@@ -382,6 +384,13 @@ const CreditCardForm: React.FC = () => {
                     </MethodologyTextBox>
                 </MethodologyContainer>
             )}
+            <Footer>
+                <FooterLink href="/terms">Terms and Conditions</FooterLink>
+                <span>•</span>
+                <FooterLink href="/privacy">Privacy Policy</FooterLink>
+                <br />
+                <p style={{ marginTop: '10px' }}>© 2024 Card IQ. All rights reserved.</p>
+            </Footer>
         </Container>
     );
 };
