@@ -62,7 +62,7 @@ const creditCards: CreditCard[] = [
         name: "Chase Freedom Unlimited\u00ae",
         image: "https://www.nerdwallet.com/cdn-cgi/image/width=300,quality=85/cdn/images/marketplace/credit_cards/84e1494c-bae2-4b0d-ac8d-e8c095ceb2fe/95f4b4eef72766c5ec9e6535530b866e39a210342ef0541cf276c9b8c0f6f01b.jpg",
         link: "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
-        signUpBonus: 300,
+        signUpBonus: 200,
         yearlyFee: 0,
         percentages: {
             groceries: 0.0,
@@ -93,20 +93,20 @@ const creditCards: CreditCard[] = [
         percentages: {
             groceries: 0.0,
             dining: 0.0,
-            travel: 0.05,
+            travel: 0.0,
             spend: 0.02
         }
     },
     {
-        name: "Capital One Savor Cash Rewards Credit Card",
+        name: "Capital One SavorOne Cash Rewards Credit Card",
         image: "https://ecm.capitalone.com/WCM/card/products/new-savor-card-art.png",
-        link: "https://www.capitalone.com/credit-cards/savor/",
+        link: "https://www.capitalone.com/credit-cards/savorone-dining-rewards/",
         signUpBonus: 200,
         yearlyFee: 0,
         percentages: {
             groceries: 0.03,
-            dining: 0.0,
-            travel: 0.05,
+            dining: 0.03,
+            travel: 0.0,
             spend: 0.01
         }
     },
@@ -119,7 +119,7 @@ const creditCards: CreditCard[] = [
         percentages: {
             groceries: 0.0,
             dining: 0.0,
-            travel: 0.05,
+            travel: 0.0,
             spend: 0.01
         }
     },
