@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from "react-helmet";
+import Navigation from '../components/Navigation';
 
 const Container = styled.div`
     max-width: 800px;
@@ -56,13 +57,16 @@ const EffectiveDate = styled.div`
 `;
 
 const TermsPage: React.FC = () => (
-    <Container>
+    <>
         <Helmet>
             <title>Terms and Conditions - Card IQ</title>
             <meta name="description" content="Terms and Conditions for Card IQ Credit Card Rewards Calculator" />
         </Helmet>
         
-        <Title>Terms and Conditions</Title>
+        <Navigation currentPath="/terms/" />
+        
+        <Container>
+            <Title>Terms and Conditions</Title>
         <EffectiveDate>Last Updated: December 22, 2024</EffectiveDate>
 
         <Section>
@@ -213,7 +217,8 @@ const TermsPage: React.FC = () => (
                 If you have any questions about these Terms and Conditions, please contact us through our website or by email.
             </Paragraph>
         </Section>
-    </Container>
+        </Container>
+    </>
 );
 
 export default TermsPage;

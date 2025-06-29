@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from "react-helmet";
+import Navigation from '../components/Navigation';
 
 const Container = styled.div`
     max-width: 800px;
@@ -64,13 +65,16 @@ const ContactBox = styled.div`
 `;
 
 const PrivacyPage: React.FC = () => (
-    <Container>
+    <>
         <Helmet>
             <title>Privacy Policy - Card IQ</title>
             <meta name="description" content="Privacy Policy for Card IQ Credit Card Rewards Calculator" />
         </Helmet>
         
-        <Title>Privacy Policy</Title>
+        <Navigation currentPath="/privacy/" />
+        
+        <Container>
+            <Title>Privacy Policy</Title>
         <EffectiveDate>Last Updated: December 22, 2024</EffectiveDate>
 
         <Section>
@@ -299,7 +303,8 @@ const PrivacyPage: React.FC = () => (
                 <ListItem>We are committed to protecting your privacy and being transparent about our practices</ListItem>
             </List>
         </Section>
-    </Container>
+        </Container>
+    </>
 );
 
 export default PrivacyPage;
