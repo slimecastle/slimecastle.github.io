@@ -11,6 +11,7 @@ const IndexPage: React.FC = () => (
         <Helmet>
             <title>Card IQ</title>
             <meta name="description" content="Credit Card Cashback Rewards Calculator" />
+            <meta name="fo-verify" content="85e864e6-c079-496f-8057-1b402e20bc7b" />
         </Helmet>
         <Navigation currentPath="/" />
         <StyledHeader>Credit Card Rewards Calculator</StyledHeader>
