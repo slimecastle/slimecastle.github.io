@@ -34,7 +34,7 @@ import { InputAdornment } from '@mui/material';
 const creditCards: CreditCard[] = [
     {
         name: "Wells Fargo Active Cash\u00ae Card",
-        image: "https://creditcards.wellsfargo.com/W-Card-MarketPlace/v12-10-24/images/Products/ActiveCash/WF_ActiveCash_VS_Collateral_Front_RGB.png",
+        image: "https://creditcards.wellsfargo.com/W-Card-MarketPlace/v6-17-25/images/Products/ActiveCash/WF_ActiveCash_VS_Collateral_Front_RGB.png",
         link: "https://creditcards.wellsfargo.com/active-cash-credit-card/?sub_channel=SEO&vendor_code=G",
         signUpBonus: 200,
         yearlyFee: 0,
